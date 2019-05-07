@@ -1,0 +1,85 @@
+{
+  "name": "ngx-log-unicorn",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build:link": "ng build ngx-log-unicorn && cd dist/ngx-log-unicorn && yalc publish",
+    "build_lib": "ng build ngx-log-unicorn",
+    "copy-license": "cp ./projects/ngx-log-unicorn/LICENSE ./dist/ngx-log-unicorn",
+    "copy-readme": "cp ./projects/ngx-log-unicorn/README.md ./dist/ngx-log-unicorn",
+    "copy-files": "npm run copy-license && npm run copy-readme",
+    "npm_pack": "cd dist/ngx-log-unicorn && npm pack",
+    "pack:lib": "ng test ngx-log-unicorn --watch=false && npm run lint && npm run build_lib && npm run copy-files && npm run npm_pack",
+    "pack:ci": "yarn run test-ci && yarn run lint && yarn run build_lib && yarn run copy-files",
+    "test-ci": "ng test ngx-log-unicorn --watch=false --browsers=ChromeHeadless"
+  },
+  "license": "mit",
+  "private": false,
+  "homepage": "https://github.com/manniniandrea/ngx-log-unicorn#readme",
+  "author": {
+    "email": "manniniandrea88@gmail.com",
+    "name": "Andrea Mannini",
+    "url": "https://github.com/manniniandrea"
+  },
+  "keywords": [
+    "log",
+    "logging",
+    "logger",
+    "ngx",
+    "angular"
+  ],
+  "bugs": {
+    "url": "https://github.com/manniniandrea/ngx-log-unicorn/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manniniandrea/ngx-log-unicorn"
+  },
+  "engines": {
+    "node": ">=6.9"
+  },
+  "dependencies": {
+    "@angular/animations": "~7.2.0",
+    "@angular/common": "~7.2.0",
+    "@angular/compiler": "~7.2.0",
+    "@angular/core": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/router": "~7.2.0",
+    "core-js": "^2.5.4",
+    "rxjs": "~6.3.3",
+    "tslib": "^1.9.0",
+    "zone.js": "~0.8.26"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular-devkit/build-ng-packagr": "~0.13.0",
+    "@angular/cli": "~7.3.8",
+    "@angular/compiler-cli": "~7.2.0",
+    "@angular/language-service": "~7.2.0",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.5.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^4.2.0",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tsickle": ">=0.34.0",
+    "tslib": "^1.9.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.2.2"
+  }
+}

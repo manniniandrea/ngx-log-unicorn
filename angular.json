@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-log-unicorn": {
+      "root": "projects/ngx-log-unicorn",
+      "sourceRoot": "projects/ngx-log-unicorn/src",
+      "projectType": "library",
+      "prefix": "lu",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-log-unicorn/tsconfig.lib.json",
+            "project": "projects/ngx-log-unicorn/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-log-unicorn/src/test.ts",
+            "tsConfig": "projects/ngx-log-unicorn/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-log-unicorn/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-log-unicorn/tsconfig.lib.json",
+              "projects/ngx-log-unicorn/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-log-unicorn-tester": {
+      "root": "projects/ngx-log-unicorn-tester/",
+      "sourceRoot": "projects/ngx-log-unicorn-tester/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-log-unicorn-tester",
+            "index": "projects/ngx-log-unicorn-tester/src/index.html",
+            "main": "projects/ngx-log-unicorn-tester/src/main.ts",
+            "polyfills": "projects/ngx-log-unicorn-tester/src/polyfills.ts",
+            "tsConfig": "projects/ngx-log-unicorn-tester/tsconfig.app.json",
+            "assets": [
+              "projects/ngx-log-unicorn-tester/src/favicon.ico",
+              "projects/ngx-log-unicorn-tester/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-log-unicorn-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-log-unicorn-tester/src/environments/environment.ts",
+                  "with": "projects/ngx-log-unicorn-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-log-unicorn-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-log-unicorn-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-log-unicorn-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-log-unicorn-tester/src/test.ts",
+            "polyfills": "projects/ngx-log-unicorn-tester/src/polyfills.ts",
+            "tsConfig": "projects/ngx-log-unicorn-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-log-unicorn-tester/karma.conf.js",
+            "styles": [
+              "projects/ngx-log-unicorn-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/ngx-log-unicorn-tester/src/favicon.ico",
+              "projects/ngx-log-unicorn-tester/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-log-unicorn-tester/tsconfig.app.json",
+              "projects/ngx-log-unicorn-tester/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-log-unicorn-tester-e2e": {
+      "root": "projects/ngx-log-unicorn-tester-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-log-unicorn-tester-e2e/protractor.conf.js",
+            "devServerTarget": "ngx-log-unicorn-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-log-unicorn-tester:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/ngx-log-unicorn-tester-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-log-unicorn"
+}

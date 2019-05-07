@@ -1,0 +1,23 @@
+sudo: required
+addons:
+  chrome: stable
+language: node_js
+cache: yarn
+node_js:
+  - "8"
+script:
+  - yarn run pack:ci
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH="$HOME/.yarn/bin:$PATH"
+before_deploy:
+  - cd dist/ngx-log-unicorn
+deploy:
+  provider: npm
+  email: manniniandrea88@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: AVmA522QoATOGT8HR/x9hAvw+IbaBz8u5sk83033uaSb0hsMc1TiEEBUFXkIJ9L+ouW9daZd8aS6SIc498SKsL85lbpbWjVPV37UFJwqseSYjzKr1mKPe4amWpUBYrWwKkQuc1pOPpH1Vob4uz5VU0gLezxtmR/5JKntHP/BOTvZPhpWwJbu9KWI+SgI52nf0v4Lab4gMua5arGiS//LgxHYRFfBsHnAybXAKwfG0A9Qgh5PjdfB1SyNtyBysuRsYvnqakQpkStBZ0cflrLVbDoTO29iDvJTr8Un3wYzx0G1drwJ/Yw0vw6lShP2GznhICt/ITeUIbWdzXEc2w6ap89fx0+Ca3jPxdUGS217fEZ1734wo+Lo7vBY/TAtnldjP4D5m3aFNWwVaTXqVHiBRi4xcZY758rNtyWg+5ZQ04OboaYt9xRfqcFa5ntrWV44E7mSprKHeGmGKayg+z+qTPbtPpO//Q3UXNsLlYuLPFuGmO/j5uUAzb+X1FLBs0RdfFy1Yo593UAF/37q1B2Vg93Bhu/p1dyvEswlUQ9x4JPGTy2ZKohuItkjuMraNDlsFw27+9rJTkRR5ESdSYIdilpgw9ix/sLVvwSI5p4BwYxf1xyuhf092WpBlAU2qJ5DsC87GcTKJ8TU0TeNuyD0HUEBwXs9iTX73XK4Klg1hJY=
+  on:
+    tags: true
+    repo: manniniandrea/ngx-log-unicorn

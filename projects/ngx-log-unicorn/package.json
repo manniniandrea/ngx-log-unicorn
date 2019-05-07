@@ -1,0 +1,31 @@
+{
+  "name": "ngx-log-unicorn",
+  "version": "1.0.0",
+  "description": "\uD83E\uDD84 NgxLogUnicorn is a very small but useful Angular library to log events in your scripts",
+  "author": {
+    "email": "manniniandrea88@gmail.com",
+    "name": "Andrea Mannini",
+    "url": "https://github.com/manniniandrea"
+  },
+  "bugs": {
+    "url": "https://github.com/manniniandrea/ngx-log-unicorn/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/manniniandrea/ngx-log-unicorn"
+  },
+  "peerDependencies": {
+    "@angular/common": "^4.3.0 || ^6.0.0",
+    "@angular/core": "^4.3.0 || ^6.0.0"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "log",
+    "logging",
+    "logger",
+    "ngx",
+    "angular"
+  ],
+  "license": "mit"
+}
