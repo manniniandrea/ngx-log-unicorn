@@ -1,6 +1,6 @@
 /*
  * Developed by Mannini Andrea (https://github.com/manniniandrea). :bowtie:
- * Last modified 5/3/19 8:24 PM.
+ * Last modified 5/8/19 6:28 PM.
  *
  * MIT License
  *
@@ -145,7 +145,7 @@ export class NgxLogUnicornService {
   }
 
   public log<T>(caller: (new (...args: any[]) => T) | T, ...args: any[]) {
-    this.tag(caller, ['info'], ...args);
+    this.tag(caller, ['log'], ...args);
   }
 
   public warn<T>(caller: (new (...args: any[]) => T) | T, ...args: any[]) {

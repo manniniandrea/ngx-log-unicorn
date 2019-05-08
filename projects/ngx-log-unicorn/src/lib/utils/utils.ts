@@ -1,6 +1,6 @@
 /*
  * Developed by Mannini Andrea (https://github.com/manniniandrea). :bowtie:
- * Last modified 5/3/19 8:20 PM.
+ * Last modified 5/8/19 3:00 PM.
  *
  * MIT License
  *
@@ -38,7 +38,7 @@ export function uniqueDefaultsList(list: EmptyOrWhildcard, defaultList: string[]
 }
 
 
-export function throwIfAlreadyLoaded(parentModule: any, moduleName: string) {
+export function throwIfAlreadyLoaded(parentModule: any, moduleName: string): void {
   if (parentModule) {
     throw new Error(`${moduleName} is already loaded. Import it in the AppModule only`);
   }

@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 .yalc/
 !/projects/ngx-log-unicorn/.git/.gitkeep
-/coverage/
+coverage/
