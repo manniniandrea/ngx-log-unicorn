@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-[![Build Status](https://travis-ci.org/manniniandrea/ngx-log-unicorn.svg?branch=master)](https://travis-ci.org/manniniandrea/ngx-log-unicorn) [![CodeFactor](https://www.codefactor.io/repository/github/manniniandrea/ngx-log-unicorn/badge)](https://www.codefactor.io/repository/github/manniniandrea/ngx-log-unicorn)
+[![Build Status](https://travis-ci.org/manniniandrea/ngx-log-unicorn.svg?branch=master)](https://travis-ci.org/manniniandrea/ngx-log-unicorn) [![CodeFactor](https://www.codefactor.io/repository/github/manniniandrea/ngx-log-unicorn/badge)](https://www.codefactor.io/repository/github/manniniandrea/ngx-log-unicorn) [![Coverage Status](https://coveralls.io/repos/github/manniniandrea/ngx-log-unicorn/badge.svg?branch=master)](https://coveralls.io/github/manniniandrea/ngx-log-unicorn?branch=master)
 ## First release
 
 readme work in progress......
