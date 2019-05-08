@@ -17,7 +17,7 @@
     "pack:lib": "ng test ngx-log-unicorn --watch=false && npm run lint && npm run build_lib && npm run copy-files && npm run npm_pack",
     "pack:ci": "yarn run test-ci && yarn run lint && yarn run build_lib && yarn run copy-files",
     "test-ci": "ng test ngx-log-unicorn --watch=false --browsers=ChromeHeadless --code-coverage=true",
-    "codecoverage": "cat projects/ngx-log-unicorn/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "codecoverage": "cat ./projects/ngx-log-unicorn/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "license": "mit",
   "private": false,
