@@ -45,10 +45,10 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: './coverage',
+      // dir: './coverage',
       reports: ['lcovonly'],
       fixWebpackSourcePaths: true,
-      // dir: require('path').join(__dirname, '../../coverage/ngx-log-unicorn'),
+      dir: require('path').join(__dirname, 'coverage'),
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
